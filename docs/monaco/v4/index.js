@@ -1,7 +1,7 @@
 import { initRightEditor } from './components/right/js/index.js';
 import { initLeftWorkspace } from './components/left/js/index.js';
 
-const definitionsUrl = '../../../src/v1/definitions.json';
+const definitionsUrl = 'https://keshavsoft.github.io/declarative-definitions/dist/v1/min.js';
 const editorStatus = document.getElementById('editorStatus');
 
 async function loadDefinitions() {
