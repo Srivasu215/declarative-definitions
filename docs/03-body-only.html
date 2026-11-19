@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Follow bodyOnly</title><link rel="stylesheet" href="./story.css"></head><body><header class="top"><div class="topin"><a class="brand" href="./index.html">KeshavSoft <span>/ definitions</span></a><nav class="toplinks"><a href="./02-the-common-contract.html">Previous</a><a href="./04-reading-a-definition.html">Next chapter →</a></nav></div></header><main class="wrap"><div class="eyebrow">Chapter 03 · One real example</div><h1>Let's follow <span class="highlight">table.bodyOnly</span>.</h1><p class="lead">Instead of jumping between files, start with the name and read the definition from the outside in.</p><section class="panel"><div class="flow"><div class="step"><span class="num">CONTROL</span><b>table</b><span class="muted small">The control family</span></div><div class="arrow">→</div><div class="step"><span class="num">VARIATION</span><b>bodyOnly</b><span class="muted small">The particular table form</span></div></div><div class="code">"table": {
+  "bodyOnly": {
+    "baseFromSpec": "tableBodyOnly",
+    "instructions": [
+      "buildBody"
+    ],
+    "options": {
+      "serial": {
+        "showSerial": "serialChild"
+      }
+    }
+  }
+}</div></section><section class="panel"><h2>Now read its contract</h2><div class="two"><div class="tile"><h3>1. Starting point</h3><p><code>baseFromSpec</code> is <span class="highlight">tableBodyOnly</span>. The definition names the base spec to start from.</p></div><div class="tile"><h3>2. Instructions</h3><p>The list contains only <span class="highlight">buildBody</span>. That is the instruction named by this variation.</p></div><div class="tile"><h3>3. Options</h3><p>The options describe a serial feature, with <span class="highlight">showSerial</span> pointing to <span class="highlight">serialChild</span>.</p></div><div class="tile"><h3>4. The whole meaning</h3><p>This is a table variation named bodyOnly, described using the same three-key contract as every other variation.</p></div></div></section><div class="callout">Notice what we did not need to do: we did not need to understand every other table variation before we could read this one. Its identity and its contract are visible right here.</div><section class="panel"><h2>Compare it with table.simple</h2><p>The family stays the same. The variation changes. The contract stays the same. Its values tell a different story.</p><div class="code">"simple": {
+  "baseFromSpec": "tableSimple",
+  "instructions": [
+    "buildColgroup",
+    "buildHeader",
+    "buildBody"
+  ],
+  "options": {
+    "search": { ... },
+    "serial": { ... },
+    "options": { ... }
+  }
+}</div><p class="muted small">The abbreviated option values above are shown only to highlight the difference in the definition; the full values remain in definitions.json.</p></section><div class="chapter"><a href="./02-the-common-contract.html">← Previous: The contract</a><a href="./04-reading-a-definition.html">Next: Read the JSON →</a></div></main><footer class="footer">A real definition, made readable.</footer></body></html>
