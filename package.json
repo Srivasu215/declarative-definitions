@@ -9,8 +9,7 @@
     ".": {
       "import": "./src/index.js",
       "default": "./src/index.js"
-    },
-    "./definitions.json": "./src/v1/definitions.json"
+    }
   },
   "files": [
     "src",
