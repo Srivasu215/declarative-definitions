@@ -10,10 +10,6 @@
       "import": "./src/index.js",
       "default": "./src/index.js"
     },
-    "./v1": {
-      "import": "./src/v1/index.js",
-      "default": "./src/v1/index.js"
-    },
     "./definitions.json": "./src/v1/definitions.json"
   },
   "files": [
@@ -23,6 +19,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/keshavsoft/declarative-definitions.git"
+  },
+  "scripts": {
+    "build": "npx @keshavsoft/build-cli"
   },
   "keywords": [
     "declarative-ui",
