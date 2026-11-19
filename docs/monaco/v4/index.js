@@ -5,11 +5,8 @@ const definitionsUrl = 'https://keshavsoft.github.io/declarative-definitions/dis
 const editorStatus = document.getElementById('editorStatus');
 
 async function loadDefinitions() {
-  const response = await fetch(definitionsUrl);
-  if (!response.ok) {
-    throw new Error(`Unable to load definitions.json (${response.status}).`);
-  }
-  return response.json();
+  const mod = await import(definitionsUrl);
+  return mod.default || mod.definitions || mod;
 }
 
 async function boot() {
