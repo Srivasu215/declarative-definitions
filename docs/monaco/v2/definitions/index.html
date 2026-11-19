@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Definitions Explorer — Monaco Studio V2</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">‹›</span><span>Definitions Explorer</span><span class="crumb">/ Monaco Studio / V2</span></div>
+    <div class="top-actions">
+      <span class="version">V2 · Guided exploration</span>
+      <a href="../../../">Story</a>
+      <a href="../../">Monaco Hub</a>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="story-pane" aria-label="Definition explorer">
+      <div class="intro">
+        <p class="eyebrow">DISCOVER THE STRUCTURE</p>
+        <h1>One definition.<br><span>Three levels.</span></h1>
+        <p class="lead">Start with the complete picture. Then open one level at a time and see how a definition is organized.</p>
+      </div>
+
+      <div class="step-card active" id="stepRoot">
+        <div class="step-number">01</div>
+        <div class="step-content">
+          <label for="rootSelect">Choose a control type</label>
+          <p>The first level tells us what kind of control we are defining.</p>
+          <select id="rootSelect"><option value="">Choose a root key…</option></select>
+        </div>
+      </div>
+
+      <div class="step-card locked" id="stepVariant">
+        <div class="step-number">02</div>
+        <div class="step-content">
+          <label for="variantSelect">Choose a variation</label>
+          <p>The second level gives that control a particular flavor.</p>
+          <select id="variantSelect" disabled><option value="">Choose a variation…</option></select>
+        </div>
+      </div>
+
+      <div class="step-card locked" id="stepContract">
+        <div class="step-number">03</div>
+        <div class="step-content">
+          <label for="contractSelect">Explore the contract</label>
+          <p>The third level contains the shared parts that describe the definition.</p>
+          <select id="contractSelect" disabled><option value="">Choose a contract key…</option></select>
+        </div>
+      </div>
+
+      <section class="meaning" aria-live="polite">
+        <p class="eyebrow">WHAT YOU ARE LOOKING AT</p>
+        <h2 id="meaningTitle">The complete definitions library</h2>
+        <p id="meaningText">Every control type and every variation lives in this library. Choose a root key to begin exploring its structure.</p>
+        <div class="path" id="selectedPath">definitions</div>
+      </section>
+
+      <button id="showAll" class="reset-button" type="button">← Show complete definitions</button>
+    </section>
+
+    <section class="editor-pane" aria-label="JSON source">
+      <div class="editor-heading">
+        <div><p class="eyebrow">LIVE SOURCE</p><h2 id="editorTitle">definitions.json</h2></div>
+        <span class="json-badge">JSON</span>
+      </div>
+      <div id="monacoEditor" class="monaco-editor"></div>
+      <footer class="editor-footer"><span id="editorPath">Complete definitions</span><span>Read-only view</span></footer>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/loader.min.js"></script>
+  <script type="module" src="./index.js"></script>
+</body>
+</html>
