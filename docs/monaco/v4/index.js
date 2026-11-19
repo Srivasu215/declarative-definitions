@@ -6,7 +6,7 @@ const editorStatus = document.getElementById('editorStatus');
 
 async function loadDefinitions() {
   const mod = await import(definitionsUrl);
-  return mod.default || mod.definitions || mod;
+  return mod.definitions;
 }
 
 async function boot() {
