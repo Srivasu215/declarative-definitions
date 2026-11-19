@@ -1,0 +1,37 @@
+{
+  "name": "declarative-definitions",
+  "version": "1.0.0",
+  "description": "High-level declarative UI component blueprints, option configurations, and assembly contracts for JSON-to-DOM compilers.",
+  "type": "module",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    },
+    "./v1": {
+      "import": "./src/v1/index.js",
+      "default": "./src/v1/index.js"
+    },
+    "./definitions.json": "./src/v1/definitions.json"
+  },
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keshavsoft/declarative-definitions.git"
+  },
+  "keywords": [
+    "declarative-ui",
+    "component-blueprints",
+    "ui-contracts",
+    "dom-compiler",
+    "zero-dependency"
+  ],
+  "author": "KeshavSoft",
+  "license": "MIT",
+  "homepage": "https://keshavsoft.github.io/declarative-definitions/"
+}
