@@ -3,67 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Definitions Explorer V3 — Monaco Studio</title>
-  <link rel="stylesheet" href="./topbar/css/topbar.css">
+  <title>Definitions Explorer V5</title>
   <link rel="stylesheet" href="./workspace/css/workspace.css">
   <link rel="stylesheet" href="./components/left/css/left.css">
   <link rel="stylesheet" href="./components/right/css/right.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand"><span class="brand-mark">‹›</span><strong>Definitions Explorer</strong><span class="crumb">/ Monaco Studio / V3</span></div>
-    <nav class="topbar-links" aria-label="Workspace navigation">
-      <a href="../">Monaco Hub</a>
-      <a href="../../../">Story</a>
-    </nav>
-  </header>
-
-  <main class="workspace">
-    <section id="leftWorkspace" class="left-workspace" aria-label="Definition discovery">
-      <div class="intro">
-        <p class="eyebrow">EXPLORE THE DEFINITION</p>
-        <h1>Discover it<br><span>one level at a time.</span></h1>
-        <p class="intro-copy">Begin with the complete library. Choose a control, discover its variation, and then inspect the shared contract.</p>
+  <main class="workspace" id="leftWorkspace">
+    <!-- Left Panel: Minimalist Selectors -->
+    <aside class="left-workspace" aria-label="Definition Selectors">
+      <div class="control-group">
+        <label for="rootSelect">Control type</label>
+        <select id="rootSelect" aria-label="Control type">
+          <option value="">Select Control</option>
+        </select>
       </div>
 
-      <section class="selection-step" id="rootStep">
-        <div class="step-heading"><span class="step-number">01</span><div><h2>Control type</h2><p>What kind of control are we defining?</p></div></div>
-        <select id="rootSelect" aria-label="Choose a control type">
-          <option value="">Choose a control type</option>
+      <div class="control-group" id="variantStep">
+        <label for="variantSelect">Variation</label>
+        <select id="variantSelect" aria-label="Variation" disabled>
+          <option value="">Select Variation</option>
         </select>
-      </section>
+      </div>
 
-      <section class="selection-step is-locked" id="variantStep">
-        <div class="step-heading"><span class="step-number">02</span><div><h2>Variation</h2><p>What flavor of this control do we need?</p></div></div>
-        <select id="variantSelect" aria-label="Choose a variation" disabled>
-          <option value="">Choose a variation</option>
+      <div class="control-group" id="contractStep">
+        <label for="contractSelect">Contract part</label>
+        <select id="contractSelect" aria-label="Contract part" disabled>
+          <option value="">Select Part</option>
         </select>
-      </section>
+      </div>
 
-      <section class="selection-step is-locked" id="contractStep">
-        <div class="step-heading"><span class="step-number">03</span><div><h2>Contract part</h2><p>What part of the definition would you like to understand?</p></div></div>
-        <select id="contractSelect" aria-label="Choose a contract part" disabled>
-          <option value="">Choose a contract part</option>
-        </select>
-      </section>
+      <button id="showAll" class="show-all-btn" type="button">Show all</button>
+    </aside>
 
-      <section class="explanation" aria-live="polite">
-        <p class="eyebrow">THE STORY SO FAR</p>
-        <h2 id="meaningTitle">The complete definitions library</h2>
-        <p id="meaningText">Every control type and variation starts here. Choose a control type to discover how the library is organized.</p>
-        <code id="selectedPath">definitions</code>
-      </section>
-
-      <button id="showAll" class="show-all" type="button">Show the complete definitions</button>
-    </section>
-
-    <section id="rightWorkspace" class="right-workspace" aria-label="JSON source">
-      <div class="editor-heading">
-        <div><p class="eyebrow">JSON SOURCE</p><h2 id="editorTitle">definitions.json</h2><p id="editorPath">Complete definitions library</p></div>
-        <span class="json-label">JSON</span>
+    <!-- Right Panel: Clean Monaco Editor -->
+    <section class="right-workspace" aria-label="Monaco Editor">
+      <div class="editor-header">
+        <span id="editorTitle">definitions.json</span>
+        <span id="editorPath">Complete library</span>
       </div>
       <div id="monacoEditor" class="monaco-editor"></div>
-      <footer class="editor-footer"><span>Original definitions · Read only</span><span id="editorStatus">Loading source…</span></footer>
     </section>
   </main>
 
