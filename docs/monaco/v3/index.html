@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Definitions Explorer V3 — Monaco Studio</title>
+  <link rel="stylesheet" href="./topbar/css/topbar.css">
+  <link rel="stylesheet" href="./workspace/css/workspace.css">
+  <link rel="stylesheet" href="./components/left/css/left.css">
+  <link rel="stylesheet" href="./components/right/css/right.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">‹›</span><strong>Definitions Explorer</strong><span class="crumb">/ Monaco Studio / V3</span></div>
+    <nav class="topbar-links" aria-label="Workspace navigation">
+      <a href="../">Monaco Hub</a>
+      <a href="../../../">Story</a>
+    </nav>
+  </header>
+
+  <main class="workspace">
+    <section id="leftWorkspace" class="left-workspace" aria-label="Definition discovery">
+      <div class="intro">
+        <p class="eyebrow">EXPLORE THE DEFINITION</p>
+        <h1>Discover it<br><span>one level at a time.</span></h1>
+        <p class="intro-copy">Begin with the complete library. Choose a control, discover its variation, and then inspect the shared contract.</p>
+      </div>
+
+      <section class="selection-step" id="rootStep">
+        <div class="step-heading"><span class="step-number">01</span><div><h2>Control type</h2><p>What kind of control are we defining?</p></div></div>
+        <select id="rootSelect" aria-label="Choose a control type">
+          <option value="">Choose a control type</option>
+        </select>
+      </section>
+
+      <section class="selection-step is-locked" id="variantStep">
+        <div class="step-heading"><span class="step-number">02</span><div><h2>Variation</h2><p>What flavor of this control do we need?</p></div></div>
+        <select id="variantSelect" aria-label="Choose a variation" disabled>
+          <option value="">Choose a variation</option>
+        </select>
+      </section>
+
+      <section class="selection-step is-locked" id="contractStep">
+        <div class="step-heading"><span class="step-number">03</span><div><h2>Contract part</h2><p>What part of the definition would you like to understand?</p></div></div>
+        <select id="contractSelect" aria-label="Choose a contract part" disabled>
+          <option value="">Choose a contract part</option>
+        </select>
+      </section>
+
+      <section class="explanation" aria-live="polite">
+        <p class="eyebrow">THE STORY SO FAR</p>
+        <h2 id="meaningTitle">The complete definitions library</h2>
+        <p id="meaningText">Every control type and variation starts here. Choose a control type to discover how the library is organized.</p>
+        <code id="selectedPath">definitions</code>
+      </section>
+
+      <button id="showAll" class="show-all" type="button">Show the complete definitions</button>
+    </section>
+
+    <section id="rightWorkspace" class="right-workspace" aria-label="JSON source">
+      <div class="editor-heading">
+        <div><p class="eyebrow">JSON SOURCE</p><h2 id="editorTitle">definitions.json</h2><p id="editorPath">Complete definitions library</p></div>
+        <span class="json-label">JSON</span>
+      </div>
+      <div id="monacoEditor" class="monaco-editor"></div>
+      <footer class="editor-footer"><span>Original definitions · Read only</span><span id="editorStatus">Loading source…</span></footer>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/loader.min.js"></script>
+  <script type="module" src="https://keshavsoft.github.io/dom-primitive-bindings/dist/v8/min.js"></script>
+  <script type="module" src="./index.js"></script>
+</body>
+</html>
